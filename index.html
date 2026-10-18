@@ -1,24 +1,59 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kibblix</title>
-    <style>
-        body {
-            background: #0d1117;
-            color: #c9d1d9;
-            font: 16px monospace;
-            padding: 40px;
-        }
-        a { color: #58a6ff; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#e9e9ed" />
+  <meta name="description" content="Kibblix.github.io" />
+  <title>The cooler website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="scripts.js" defer></script>
 </head>
-<body>
-    <h1>Kibblix</h1>
-    <p>Welcome to my corner of the internet.</p>
-    <h2>Projects</h2>
-    <a href="https://github.com/Kibblix">My GitHub</a>
+<body data-theme="light">
+  <canvas id="background" aria-hidden="true"></canvas>
+  <header class="topbar">
+    <nav aria-label="Main navigation">
+      <a href="#home" class="nav-link active" data-page="home">HOME</a>
+      <a href="#projects" class="nav-link" data-page="projects">PROJECTS</a>
+      <a href="https://github.com/Kibblix" class="nav-link" target="_blank" rel="noopener noreferrer">GITHUB</a>
+    </nav>
+    <label class="theme-label" for="theme">Theme
+      <select id="theme" aria-label="Choose theme">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </label>
+  </header>
+
+  <main>
+    <section id="home" class="page active-page" aria-labelledby="heading">
+      <div class="avatar" aria-label="Kibblix profile placeholder">
+        <img src="assets/portrait.png" alt="Kibblix portrait" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'" />
+        <span class="avatar-fallback" style="display:none">K</span>
+      </div>
+      <h1 id="heading">Kibblix</h1>
+      <p>Developer, Linux enthusiast, and occasional hardware tinkerer.</p>
+      <p>Making things and breaking things on <a href="https://github.com/Kibblix" target="_blank" rel="noopener noreferrer">github</a>, <span class="muted">with code, servers, and electronics.</span></p>
+      <p>I like <span class="muted">Linux, CLI tools, tiny computers, and building stuff just because I can.</span></p>
+    </section>
+
+    <section id="projects" class="page" aria-labelledby="projects-heading" hidden>
+      <h1 id="projects-heading">Projects</h1>
+      <div class="project-grid">
+        <a class="project" href="https://github.com/Kibblix/Tiny-OS" target="_blank" rel="noopener noreferrer">
+          <strong>Tiny-OS</strong><span>Operating system experiments</span>
+        </a>
+        <a class="project" href="https://github.com/Kibblix/Drone-Shooter" target="_blank" rel="noopener noreferrer">
+          <strong>Drone-Shooter</strong><span>A game project</span>
+        </a>
+        <a class="project" href="https://github.com/Kibblix" target="_blank" rel="noopener noreferrer">
+          <strong>More on GitHub ↗</strong><span>Code and other experiments</span>
+        </a>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
